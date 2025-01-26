@@ -9,6 +9,7 @@ jobs:
   build:
     name: Run Lighthouse CI
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -34,4 +35,4 @@ jobs:
           PORT: 3000
 
       - name: Run Lighthouse CI
-        run
+        run: npx lhci autorun
