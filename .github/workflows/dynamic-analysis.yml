@@ -1,0 +1,38 @@
+name: Dynamic Analysis
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dynamic-analysis:
+    name: Run Lighthouse CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build the project
+        run: pnpm build
+
+      - name: Start the server
+        run: pnpm start &
+        env:
+          HOST: 0.0.0.0
+          PORT: 3000
+
+      - name: Run Lighthouse CI
+        run
