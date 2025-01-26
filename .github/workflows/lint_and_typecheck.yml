@@ -3,7 +3,7 @@ name: Lint and Typecheck
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   build:
