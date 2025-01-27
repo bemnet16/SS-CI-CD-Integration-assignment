@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-const a;
 const props = defineProps<{
   cur_val: number | null | string;
   changeIndex: (i: number) => void;
