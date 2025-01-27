@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-
+const a;
 const props = defineProps<{
   cur_val: number | null | string;
   changeIndex: (i: number) => void;
@@ -48,9 +48,10 @@ const getBackgroundStyle = () => {
           class="w-full h-3 bg-bgColor-light rounded-full appearance-none"
         />
         <span
-        :style="`left: calc(${Number(budget) / 30}% - 20px)`"
-        class="absolute top-0 text-xs text-white bg-bgColor rounded-full h-5 px-2 flex items-center"
-        >£{{budget}}</span>
+          :style="`left: calc(${Number(budget) / 30}% - 20px)`"
+          class="absolute top-0 text-xs text-white bg-bgColor rounded-full h-5 px-2 flex items-center"
+          >£{{ budget }}</span
+        >
         <div class="flex items-center justify-between w-full mt-1">
           <span>£100</span>
           <span>£3000</span>
